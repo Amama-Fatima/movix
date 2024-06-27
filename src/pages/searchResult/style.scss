@@ -1,46 +1,44 @@
 @import "../../mixins.scss";
 .searchResultsPage {
-    min-height: 700px;
-    padding-top: 100px;
-    .resultNotFound {
-        font-size: 24px;
-        color: var(--black-light);
+  min-height: 700px;
+  padding-top: 100px;
+  .resultNotFound {
+    font-size: 24px;
+    color: var(--black-light);
+  }
+  .pageTitle {
+    font-size: 24px;
+    line-height: 34px;
+    color: white;
+    margin-bottom: 25px;
+  }
+  .content {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 10px;
+    margin-bottom: 50px;
+    @include md {
+      gap: 20px;
     }
-    .pageTitle {
-        font-size: 24px;
-        line-height: 34px;
-        color: white;
-        margin-bottom: 25px;
+    .movieCard {
+      .posterBlock {
+        margin-bottom: 20px;
+      }
     }
-    .content {
-        display: flex;
-        flex-flow: row wrap;
-        gap: 10px;
-        margin-bottom: 50px;
-        @include md {
-            gap: 20px;
-        }
-        .movieCard {
-            .posterBlock {
-                margin-bottom: 20px;
-            }
-        }
+  }
+
+  .loaderClass {
+    position: absolute; // Absolute position within the relative container
+    left: 50%; // Center horizontally
+    transform: translateX(-50%); // Adjust for exact centering
+
+    &.bottom {
+      bottom: 0; // Position at the bottom of the container
     }
 
-    .loaderClass {
-        position: absolute; // Absolute position within the relative container
-        left: 50%; // Center horizontally
-        transform: translateX(-50%); // Adjust for exact centering
-    
-        &.bottom {
-          bottom: 0; // Position at the bottom of the container
-        }
-    
-        &:not(.bottom) {
-          top: 50%; // Center vertically when not at the bottom
-          transform: translate(-50%, -50%); // Adjust for exact centering
-        }
+    &:not(.bottom) {
+      top: 50%; // Center vertically when not at the bottom
+      transform: translate(-50%, -50%); // Adjust for exact centering
     }
-
-    
+  }
 }
