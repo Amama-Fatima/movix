@@ -9,7 +9,7 @@ import PosterFallback from "../../assets/no-poster.png";
 import PropTypes from "prop-types";
 
 import "./style.scss";
-import CircleRating from "../circleRating/Circlerating";
+import CircleRating from "../circleRating/CircleRating";
 
 const MovieCard = ({ data, fromSearch, mediaType }) => {
   const { url } = useSelector((state) => state.home);
